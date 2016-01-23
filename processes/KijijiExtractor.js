@@ -35,28 +35,28 @@ function keywordsBuilder(request, language){
 }
 
 function normalize(data) {
+  console.log(data.innerAd.info.Prix);
   var cleanedAd = {
     link : data.link,
     title : data.title,
     pubDate : data.pubDate,
     image : data.innerAd.image,
     description : data.innerAd.desc,
-    price : data.innerAd.info.price
+    price : data.innerAd.info.Prix
   }
 
-  return data;
+  return cleanedAd;
 }
 
 function extract(request) {
 
   var deferred = Q.defer();
 
-  kijiji.query({'locationId':request.region}, {'keywords':keywordsBuilder(request, 'french')}, function(err, ads) {
+  kijiji.query({'locationId':request.region}, {'minPrice':0, 'keywords':keywordsBuilder(request, 'french')}, function(err, ads) {
 
     var cleanedData = [];
 
     _.each(ads, function(ad, index, array) {
-      console.log(kijiji.parse(ad));
 
       cleanedData[index] = normalize(ad);
 
@@ -74,4 +74,4 @@ module.exports = {
 }
 
 extract(request)
-  .then(function(data) {console.log(data)});
+  .then(function(data) {/*console.log(data)*/});
