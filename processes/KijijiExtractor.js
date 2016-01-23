@@ -7,7 +7,7 @@ var request = {
   target : ['kijiji'],
   languages : {
     french : {
-      keywords : ['Cle', 'USB', '16GB'],
+      keywords : ['honda', 'civic', '2004'],
       tags : ['kingston'],
       categories : ['electronique', 'composantes', 'informatique']
     },
@@ -35,14 +35,13 @@ function keywordsBuilder(request, language){
 }
 
 function normalize(data) {
-  console.log(data.innerAd.info.Prix);
   var cleanedAd = {
     link : data.link,
     title : data.title,
     pubDate : data.pubDate,
     image : data.innerAd.image,
     description : data.innerAd.desc,
-    price : data.innerAd.info.Prix
+    price : parseFloat(data.innerAd.info.Prix.replace(' ', '').replace('$','').replace(',','.'))
   }
 
   return cleanedAd;
@@ -72,6 +71,3 @@ function extract(request) {
 module.exports = {
   extract: extract
 }
-
-extract(request)
-  .then(function(data) {/*console.log(data)*/});
