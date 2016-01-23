@@ -2,23 +2,6 @@ var Q = require('q');
 var _ = require('lodash');
 var kijiji = require('kijiji-scraper');
 
-var request = {
-  region : 80002,
-  target : ['kijiji'],
-  languages : {
-    french : {
-      keywords : ['honda', 'civic', '2004'],
-      tags : ['kingston'],
-      categories : ['electronique', 'composantes', 'informatique']
-    },
-    english : {
-      keywords : ['USB', 'Key', '16GB'],
-      tags : ['kingston'],
-      categories : ['electronics', 'components', 'computer']
-    }
-  }
-}
-
 function keywordsBuilder(request, language){
 
   var keywords = request.languages[language].keywords;
