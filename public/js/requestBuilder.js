@@ -1,7 +1,22 @@
-var myDropzone = new Dropzone("search#myId", { url: "/file/post"});
+/*Dropzone.autoDiscover = false;
+
+$("#search #dropzone").dropzone({ 
+																	url: urlLocal.toString(),
+																	clickable: true,
+																	uploadMultiple: false
+																});
+Dropzone.options.myDropzone = {
+  init: function() {
+        thisDropzone = this;
+        this.on("success", function(file, responseText) {
+            var responseText = file.id // or however you would point to your assigned file ID here;
+            console.log(responseText); // console should show the ID you pointed to
+            // do stuff with file.id ...
+        });
+    }
+}; */
 
 function buildClarifaiData() {
-	//var input = $( "#dropZoneImg" );
 	var file    = document.querySelector('input[type=file]').files[0];
   var reader  = new FileReader();
 
@@ -13,7 +28,7 @@ function buildClarifaiData() {
 }
 
 function updateResult(data, textStatus, jqXHR) {
-	
+	a = data;
 }
 
 function sendClarifaiRequest(img) {
@@ -28,7 +43,35 @@ function sendClarifaiRequest(img) {
 	});
 }
 
-function sendRequest() {
+function getTagsInputValues(selector) {
+	tagNames = [ ];
+	$(selector).find('.bootstrap-tagsinput').find(".tag").each(function(tagIndex) {
+		tagNames.push($(this).text())
+	});
 
+ return tagNames;
+}
+
+function getCategories() {
+	categories = [ ];
+	categories.push($(".js-category").find(".select2-chosen").text());
+
+	return categories;
+}
+
+function buildRequest() {
+	sendRequest(getTagsInputValues(".js-tags"), getTagsInputValues(".js-keywords"), getCategories());
+}
+
+function sendRequest(tagNames, keywords, categories) {
+	$.ajax({
+	  type: "POST",
+	  url: urlLocal,
+	  data: { "tagNames" :  tagNames,
+	  				"keywords" : keywords,
+	  				"categories" : categories },
+	  success: updateResult,
+	  dataType: "json"
+	});
 }
 
