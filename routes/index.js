@@ -1,11 +1,19 @@
 var express = require('express');
 var router = express.Router();
-
-
-/* GET home page. */
+var RequestHandler = require('../processes/RequestHandler');
 
 router.get('/', function(req, res) {
   res.render('index', { title: 'Price Finder' });
+});
+
+router.get('/PFRequest', function(req, res) {
+
+  RequestHandler
+    .execute(req.body)
+    .then(function(data) {
+      res.send(data);
+    });
+
 });
 
 module.exports = router;

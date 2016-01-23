@@ -2,23 +2,6 @@ var Q = require('q');
 var _ = require('lodash');
 var kijiji = require('kijiji-scraper');
 
-var request = {
-  region : 80002,
-  target : ['kijiji'],
-  languages : {
-    french : {
-      keywords : ['Cle', 'USB', '16GB'],
-      tags : ['kingston'],
-      categories : ['electronique', 'composantes', 'informatique']
-    },
-    english : {
-      keywords : ['USB', 'Key', '16GB'],
-      tags : ['kingston'],
-      categories : ['electronics', 'components', 'computer']
-    }
-  }
-}
-
 function keywordsBuilder(request, language){
 
   var keywords = request.languages[language].keywords;
@@ -35,14 +18,13 @@ function keywordsBuilder(request, language){
 }
 
 function normalize(data) {
-  console.log(data.innerAd.info.Prix);
   var cleanedAd = {
     link : data.link,
     title : data.title,
     pubDate : data.pubDate,
     image : data.innerAd.image,
     description : data.innerAd.desc,
-    price : data.innerAd.info.Prix
+    price : parseFloat(data.innerAd.info.Prix.replace(' ', '').replace('$','').replace(',','.'))
   }
 
   return cleanedAd;
@@ -72,6 +54,3 @@ function extract(request) {
 module.exports = {
   extract: extract
 }
-
-extract(request)
-  .then(function(data) {/*console.log(data)*/});
