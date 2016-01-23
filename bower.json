@@ -10,7 +10,7 @@
     "bootstrap": "~3.3.6",
     "flat-ui": "~2.2.2",
     "select2": "~4.0.1",
-    "videojs": "~5.5.3"
+    "videojs": "~5.5.3",
     "jquery": "~2.2.0"
   }
 }
