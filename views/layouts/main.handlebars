@@ -5,9 +5,18 @@
   <meta name="viewport" content="width=device-width">
   <title>{{title }}</title>
   <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Scripts -->
+  <script src="/components/dropzone/dist/min/dropzone.min.js"></script>
+  <script src="/components/jquery/dist/jquery.min.js"></script>
+  <script src="/js/config.js"></script>
+  <script src="/js/requestBuilder.js"></script>
+  <script src="http://localhost:35729/livereload.js"></script>
   {{#if ENV_DEVELOPMENT}}
-    <script src="http://localhost:35729/livereload.js"></script>
+  <script src="http://localhost:35729/livereload.js"></script>
   {{/if}}
+
+
 </head>
 <body>
 
@@ -17,3 +26,4 @@
 
   </body>
 </html>
+
