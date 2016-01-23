@@ -3,17 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
-  <title>{{title }}</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <title>{{title}}</title> 
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/style.css">   
+  <link rel="stylesheet" href="/components/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/components/flat-ui/dist/css/flat-ui.min.css"> 
+  <script src="/components/jquery/dist/jquery.min.js"></script>
+  <script src="/components/flat-ui/dist/js/flat-ui.min.js"></script>
+  <script src="/components/select2/dist/js/select2.min.js"></script>
+  <script src="/components/select2/dist/js/select2.full.min.js"></script> 
   {{#if ENV_DEVELOPMENT}}
     <script src="http://localhost:35729/livereload.js"></script>
   {{/if}}
 </head>
 <body>
 
+  <div class="content">
 
   {{{body}}}
+  
+  </div>
 
-
+  <script src="/js/init.js"></script>
   </body>
 </html>
