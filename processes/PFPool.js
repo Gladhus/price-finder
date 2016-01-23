@@ -15,12 +15,12 @@ var processes = {
   }
 };
 
-function getDataExtractor(callback) {
+function getChildProcess(name, data, callback) {
 
-  if(processes.dataExtractor.pool.length < processes.dataExtractor.limit) {
+  if(processes[name].pool.length < processes[name].limit) {
 
-    var forkedProcess = fork(__dirname + '/DataExtractor.js');
-    processes.dataExtractor.pool.push(forkedProcess);
+    var forkedProcess = fork(__dirname + '/' + name + '.js');
+    processes[name].pool.push(forkedProcess);
 
     forkedProcess.send({
       callback: callback.toString(),
@@ -34,28 +34,6 @@ function getDataExtractor(callback) {
 
 }
 
-function getDataNormalizer(callback) {
-
-  if(processes.dataNormalizer.pool.length < processes.dataNormalizer.limit) {
-    var forkedProcess = fork(__dirname + '/DataNormalizer.js');
-    processes.dataNormalizer.pool.push(forkedProcess);
-    return forkedProcess;
-  }
-
-  return false;
-
+module.exports = {
+  getChildProcess: getChildProcess
 }
-
-function getDataCompiler(callback) {
-
-  if(processes.dataCompiler.pool.length < processes.dataCompiler.limit) {
-    var forkedProcess = fork(__dirname + '/DataCompiler.js');
-    processes.dataCompiler.pool.push(forkedProcess);
-    return forkedProcess;
-  }
-
-  return false;
-
-}
-
-getDataExtractor(function() {console.log('mange mes bas')});
