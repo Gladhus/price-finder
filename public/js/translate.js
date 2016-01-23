@@ -1,0 +1,4 @@
+function getUsedLanguage() {
+  $('js-tags')
+}
+
