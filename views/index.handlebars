@@ -4,17 +4,18 @@
 
   <div class="PFBox">
     <h5>Find the average price of an item</h5>
-    <form action="PFRequest form-horizontal">
+
       <div class="form-group">
         <label for="keywords" class="control-label col-xs-2">Keywords</label>
-        <div class="col-sm-9 tagsinput-primary js-tags">
-          <input type="text" name="keywords" class="form-control PFInput" data-role="tagsinput"><br>
+        <div class="col-sm-9 tagsinput-primary js-keywords">
+          <input type="text" name="keywords" class="form-control PFInput" data-role="tagsinput">
         </div>
       </div>
+
       <div class="form-group">
         <label for="tags" class="control-label col-xs-2">Tags</label>
-        <div class="col-sm-9 tagsinput-primary js-keywords">
-          <input type="text" name="tags" class="form-control PFInput tagsinput" data-role="tagsinput"><br>
+        <div class="col-sm-9 tagsinput-primary js-tags">
+          <input type="text" name="tags" class="form-control PFInput tagsinput" data-role="tagsinput">
         </div>
       </div>
 
@@ -44,8 +45,8 @@
 
       <div class="form-group">
         <div class="col-sm-11">
-          <button class="btn btn-primary btn-wide PFSearchBtn">Search the item price</button>
+          <button class="btn btn-primary btn-wide PFSearchBtn" onClick="buildRequest()">Search the item price</button>
         </div>
       </div>
-    </form>
+
   </div>
