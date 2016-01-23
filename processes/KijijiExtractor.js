@@ -35,6 +35,14 @@ function keywordsBuilder(request, language){
 }
 
 function normalize(data) {
+  var cleanedAd = {
+    link : data.link,
+    title : data.title,
+    pubDate : data.pubDate,
+    image : data.innerAd.image,
+    description : data.innerAd.desc,
+    price : data.innerAd.info.price
+  }
 
   return data;
 }
@@ -48,6 +56,7 @@ function extract(request) {
     var cleanedData = [];
 
     _.each(ads, function(ad, index, array) {
+      console.log(kijiji.parse(ad));
 
       cleanedData[index] = normalize(ad);
 
