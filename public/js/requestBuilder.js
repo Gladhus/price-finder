@@ -28,7 +28,7 @@ function buildClarifaiData() {
 }
 
 function updateResult(data, textStatus, jqXHR) {
-	
+	a = data;
 }
 
 function sendClarifaiRequest(img) {
@@ -43,7 +43,35 @@ function sendClarifaiRequest(img) {
 	});
 }
 
-function sendRequest() {
+function getTagsInputValues(selector) {
+	tagNames = [ ];
+	$(selector).find('.bootstrap-tagsinput').find(".tag").each(function(tagIndex) {
+		tagNames.push($(this).text())
+	});
 
+ return tagNames;
+}
+
+function getCategories() {
+	categories = [ ];
+	categories.push($(".js-category").find(".select2-chosen").text());
+
+	return categories;
+}
+
+function buildRequest() {
+	sendRequest(getTagsInputValues(".js-tags"), getTagsInputValues(".js-keywords"), getCategories());
+}
+
+function sendRequest(tagNames, keywords, categories) {
+	$.ajax({
+	  type: "POST",
+	  url: urlLocal,
+	  data: { "tagNames" :  tagNames,
+	  				"keywords" : keywords,
+	  				"categories" : categories },
+	  success: updateResult,
+	  dataType: "json"
+	});
 }
 
