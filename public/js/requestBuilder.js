@@ -1,7 +1,22 @@
-var myDropzone = new Dropzone("search#myId", { url: "/file/post"});
+/*Dropzone.autoDiscover = false;
+
+$("#search #dropzone").dropzone({ 
+																	url: urlLocal.toString(),
+																	clickable: true,
+																	uploadMultiple: false
+																});
+Dropzone.options.myDropzone = {
+  init: function() {
+        thisDropzone = this;
+        this.on("success", function(file, responseText) {
+            var responseText = file.id // or however you would point to your assigned file ID here;
+            console.log(responseText); // console should show the ID you pointed to
+            // do stuff with file.id ...
+        });
+    }
+}; */
 
 function buildClarifaiData() {
-	//var input = $( "#dropZoneImg" );
 	var file    = document.querySelector('input[type=file]').files[0];
   var reader  = new FileReader();
 
