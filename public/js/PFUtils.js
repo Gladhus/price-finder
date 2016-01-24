@@ -21,4 +21,3 @@ function hideLoader() {
 }
 
 hideLoader();
-

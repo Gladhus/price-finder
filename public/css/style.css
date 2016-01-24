@@ -51,6 +51,7 @@ label {
 
 .data-list {
   margin-top: 20px; 
+  display: none;
 }
 
 .data-list th {

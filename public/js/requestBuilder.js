@@ -28,6 +28,7 @@ function buildClarifaiData() {
 }
 
 function updateResult(data, textStatus, jqXHR) {
+  $('data-list').css('display', 'block');
   hideLoader();
 }
 
