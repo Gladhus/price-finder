@@ -28,7 +28,7 @@ function buildClarifaiData() {
 }
 
 function updateResult(data, textStatus, jqXHR) {
-	console.log('Allo');
+	//console.log(data);
 }
 
 function sendClarifaiRequest(img) {
