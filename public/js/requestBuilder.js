@@ -60,6 +60,14 @@ function updateResult(data, textStatus, jqXHR) {
   var myBarChart = new Chart(ctx).Bar(graphData, {
       responsive: true, scaleFontColor: "#0c0c0c" });
 
+  $('.PFStats').css('display', 'inline-block');
+
+  $(".js-hi-price").html("Highest price : " + data.max + " $");
+  $(".js-low-price").html("Lower price : " + data.min + " $");
+  $(".js-av-price").html("Average price : " + data.mean + " $");
+  $(".js-median").html("Median : " + data.median + " $");
+  $(".js-stand-dev").html("Standart deviation : " + " $");
+
   $('.data-list').css('display', 'block');
  
   var rank = 1;

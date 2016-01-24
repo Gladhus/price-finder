@@ -62,14 +62,18 @@ label {
 }
 
 .PFStats {
-  width: 300px; 
-  display: inline-block;
+  display: none;
+  border-top: solid 3px orange;
+  padding: 20px;
+  width: 300px;
+  background-color: whitesmoke;
 }
 
 .PFChartBox {
+  display: inline-block;
   border-top: solid 3px orange;
   padding: 20px;
-  width: 800px;
+  width: 500px;
   background-color: whitesmoke;
 }
 

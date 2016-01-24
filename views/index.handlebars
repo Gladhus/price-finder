@@ -62,17 +62,27 @@
       </div> <!-- end of PFBox -->
     </div> <!-- end of search-content -->
 
+<table>
+  <tr>
+    <td>
     <div class="js-chart-container">
-      <canvas id="myChart" width="400" height="400" style='display:none'> </canvas>
-      <div class="PFStats js-stats">
-        <div>Highest price</div>
-        <div>Lower proce</div>
-        <div>Average price</div>
-        <div>Median</div>
-      </div>
+
+          <canvas id="myChart" width="400" height="400" style='display:none'> </canvas>
+
     </div>
+    </td>
 
-
+    <td>
+    <div class="PFStats js-stats">
+            <div class="js-hi-price"></div>
+            <div class="js-low-price"></div>
+            <div class="js-av-price"></div>
+            <div class="js-median"></div>
+            <div class="js-stand-dev"></div>
+          </div>
+    </td>
+  </tr>
+</table>
     <div class="loader-wrap">
       <p>Processing request</p>
       <div class='loader'>
