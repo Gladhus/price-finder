@@ -13,6 +13,7 @@ function showLoader() {
   $('.loader-wrap').css('display','block'); 
   $('body').addClass('dark');
   $('.PFMain').css('opacity', '0.3');
+  $('h1').css('opacity', '0.3');
 }
 
 function hideLoader() {
@@ -22,6 +23,7 @@ function hideLoader() {
   $('body').removeClass('dark');
   $('.PFMain').css('opacity', '1.0');
   $('.loader-wrap').css('opacity', '0');
+  $('h1').css('opacity', '1');
 }
 
 function movePFBlockAside() {
@@ -31,11 +33,14 @@ function movePFBlockAside() {
   $('.js-chart-container').addClass('PFChartBox');
   $('.data-list').css('display', 'block');
   $('.js-stats').css('display', 'block');
+  $('#myChart').css('display', 'block');
   
-  $('.js-chart-box').css('.opacity', '1');
+  $('.js-chart-container').css('opacity', '1');
+  $('.js-chart-box').css('opacity', '1');
   $('.data-list').css('opacity', '1');
   $('.js-stats').css('opacity', '1');
 
+  $('#myChart').css('opacity', '1');
   var button = $('<span class="hideBtn btn btn-primary fui-triangle-right-large"></span>');
   button.css('position', 'absolute');
   button.css('left', '20px');
