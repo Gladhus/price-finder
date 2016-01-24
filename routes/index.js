@@ -7,7 +7,6 @@ router.get('/', function(req, res) {
 });
 
 router.post('/PFRequest', function(req, res) {
-
   RequestHandler
     .execute(req.body)
     .then(function(data) {

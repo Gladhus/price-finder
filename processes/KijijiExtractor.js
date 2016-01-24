@@ -60,6 +60,8 @@ function extract(request) {
 
     var cleanedData = [];
 
+    console.log(ads);
+
     _.each(ads, function(ad, index, array) {
 
       cleanedData[index] = normalize(ad);

@@ -1,4 +1,4 @@
-var urlLocal = "http://localhost:3000/PFRequest";
+var urlLocal = "http://127.0.0.1:3000/PFRequest";
 var urlClarifai = "https://api.clarifai.com/v1/token/";
 
 var clarifaiCredentials = { 
