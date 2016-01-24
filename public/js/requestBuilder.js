@@ -29,7 +29,9 @@ function buildClarifaiData() {
 
 function updateResult(data, textStatus, jqXHR) {
   var myChart = $("#myChart");
-  var table = $('.table');
+  var table = $('.table>tbody');
+  table.empty();
+
   myChart.css("display","block");
   $('.data-list').css('display', 'block');
   var ctx = myChart.get(0).getContext("2d");
@@ -61,12 +63,12 @@ function updateResult(data, textStatus, jqXHR) {
       responsive: false, scaleFontColor: "#0c0c0c" });
 
   $('.data-list').css('display', 'block');
- 
+
   var rank = 1;
 
   for(var j = 0; j < 5; ++j){
     for(var i = 0; i < data.ranges[j].ads.length; ++i){
-      table.append($('<tr><td>' + rank + '</td><td><a href="' + data.ranges[j].ads[i].link + '">' + data.ranges[j].ads[i].title + '</a></td> <td>' + data.ranges[j].ads[i].price + ' $</td></tr>'));
+      table.append($('<tr><td>' + rank + '</td><td><a href="' + data.ranges[j].ads[i].link + '">' + data.ranges[j].ads[i].title + '</a></td> <td>' + data.ranges[j].ads[i].price.toFixed(2) + ' $</td></tr>'));
       ++rank;
     }
   }
@@ -118,7 +120,7 @@ function buildRequest() {
   sendRequest(getTagsInputValues(".js-tags"), getTagsInputValues(".js-keywords"), getCategories(), getTargets());
 }
 
-function sendRequest(tagNames, keywords, categories, targets) { 
+function sendRequest(tagNames, keywords, categories, targets) {
   $.ajax({
     type: "POST",
     url: urlLocal,

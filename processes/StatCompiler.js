@@ -54,19 +54,34 @@ function buildPriceRanges(data, prices) {
   return priceRanges;
 }
 
+function cleanAberrantData(ads, std, avg, med) {
+
+  return _.filter(ads, function(ad) {
+    return true;
+    //return (avg-std < ad.price && ad.price < avg+std);
+  });
+
+}
+
 function compile(data) {
 
-    var unitedData = _.flatten(data);
+    var unitedData = _.orderBy(_.flatten(data), 'price');
     var prices = _.map(unitedData, 'price');
+    var std = math.std(prices);
+    var avg = math.mean(prices);
+    var med = math.median(prices);
 
-    
+    unitedData = cleanAberrantData(unitedData, std, avg, med);
+    prices = _.map(unitedData, 'price');
+
     return {
       median: math.median(prices),
+      std: math.std(prices),
       mean: math.mean(prices),
       max: math.max(prices),
       min: math.min(prices),
       count: prices.length,
-      ranges: buildPriceRanges(_.orderBy(unitedData,'price'), prices)
+      ranges: buildPriceRanges(unitedData, prices)
     };
 
 }
