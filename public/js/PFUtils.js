@@ -12,13 +12,14 @@ function showLoader() {
   $('body').addClass('dark');
   $('.PFBox').css('opacity', '0.3');
   $('.loader-wrap').css('opacity', '1');
+  $('.loader-wrap').css('display','block');
 }
 
 function hideLoader() {
   $('body').removeClass('dark');
   $('.PFBox').css('opacity', '1');
   $('.loader-wrap').css('opacity', '0');
+  $('.loader-wrap').css('display', 'none');
 }
 
 hideLoader();
-$('.loader-wrap').css('display', 'none');
