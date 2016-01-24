@@ -1,6 +1,7 @@
 var _ = require('lodash');
 var Q = require('Q');
 var KijijiExtractor = require('../processes/KijijiExtractor');
+var EbayExtractor = require('../processes/EbayExtractor');
 var StatCompiler = require('../processes/StatCompiler');
 
 function execute(request, callback){
@@ -11,6 +12,9 @@ function execute(request, callback){
     switch (target) {
       case 'kijiji':
         extractorPromises.push(KijijiExtractor.extract(request));
+        break;
+      case 'ebay':
+        extractorPromises.push(EbayExtractor.extract(request));
         break;
       default:
     }

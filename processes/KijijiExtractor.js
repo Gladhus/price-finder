@@ -4,26 +4,17 @@ var kijiji = require('kijiji-scraper');
 
 
 /**
- * Function that builds the keywords query string. 
- * The Kijiji api's taking a string with every keywords separated by '+' signs. 
+ * Function that builds the keywords query string.
+ * The Kijiji api's taking a string with every keywords separated by '+' signs.
  *
  * Arguments
  * @request : The request JSON for the research to be made on Kijiji.
- * @language : The language that the research is made in. 
+ * @language : The language that the research is made in.
  */
 function keywordsBuilder(request, language){
 
   var keywords = request.languages[language].keywords;
-
-  var queryString = keywords[0];
-
-  for(var i = 1; i < keywords.length; ++i){
-    queryString += '+';
-    queryString += keywords[i];
-  }
-
-  return queryString;
-
+  return keywords.join('+');
 }
 
 /**
