@@ -3,23 +3,11 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #34495E !important;
 }
-
-.content {
-  margin: auto;
-  width: 450px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: #7F8C8D !important;
-}
-
-p {
-  color: #95A5A6;
-}
-
-a {
-  color: #00B7FF;
-}
+.last { margin-top: 20px; }
+.content { margin: auto; width: 450px; }
+h1, h2, h3, h4, h5, h6 { color: #7F8C8D !important; }
+p { color: #95A5A6; }
+a { color: #00B7FF; }
 
 input:focus,
 select:focus,
@@ -57,7 +45,7 @@ label {
   border: solid 1px orange;
 }
 
-<<<<<<< HEAD
+
 .dark {
   background:
     /* top, transparent black, faked with gradient */ 

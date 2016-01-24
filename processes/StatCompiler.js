@@ -28,7 +28,6 @@ function compile(data) {
     var unitedData = _.flatten(data);
     var prices = _.map(unitedData, 'price');
 
-    console.log(unitedData);
     return {
       median: math.median(prices),
       mean: math.mean(prices),
