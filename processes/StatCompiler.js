@@ -25,16 +25,19 @@ function buildPriceRanges(data, prices) {
 
 function compile(data) {
 
-    var prices = _.map(data, 'price');
+    var unitedData = _.flatten(data);
+    var prices = _.map(unitedData, 'price');
 
+    console.log(unitedData);
     return {
       median: math.median(prices),
       mean: math.mean(prices),
       max: math.max(prices),
       min: math.min(prices),
-      ranges: buildPriceRanges(data, prices)
+      count: prices.length,
+      ranges: buildPriceRanges(unitedData, prices)
     };
 
 }
 
-module.exports = compile;
+module.exports = {compile:compile};
