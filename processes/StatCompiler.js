@@ -59,13 +59,14 @@ function compile(data) {
     var unitedData = _.flatten(data);
     var prices = _.map(unitedData, 'price');
 
+    
     return {
       median: math.median(prices),
       mean: math.mean(prices),
       max: math.max(prices),
       min: math.min(prices),
       count: prices.length,
-      ranges: buildPriceRanges(unitedData, prices)
+      ranges: buildPriceRanges(_.orderBy(unitedData,'price'), prices)
     };
 
 }
