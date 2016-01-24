@@ -6,6 +6,10 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Price Finder' });
 });
 
+router.get('/chartTest', function(req, res) {
+  res.render('chartTest', {title : 'Chart Tests' });
+});
+
 router.post('/PFRequest', function(req, res) {
 
   RequestHandler
