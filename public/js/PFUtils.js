@@ -29,12 +29,10 @@ function movePFBlockAside() {
   $('.PFMain').css('left', '-400px');
 
   $('.js-chart-container').addClass('PFChartBox');
-  $('#myChart').css('display', 'block');
   $('.data-list').css('display', 'block');
   $('.js-stats').css('display', 'block');
   
   $('.js-chart-box').css('.opacity', '1');
-  $('#myChart').css('opacity', '1');
   $('.data-list').css('opacity', '1');
   $('.js-stats').css('opacity', '1');
 

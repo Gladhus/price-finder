@@ -66,6 +66,11 @@ label {
   margin-right: -20px;
 }
 
+.result-content {
+  margin: auto;
+  width: 700px; 
+}
+
 #myChart {
 
 }
@@ -75,14 +80,20 @@ label {
 }
 
 .PFStats {
-  width: 300px; 
+  border-top: solid 3px orange;
+  padding: 20px;
+  width: 250px;
+  background-color: whitesmoke;
+  right: 240px;
+  top: 442px;
+  position: absolute;
   display: none;
 }
 
 .PFChartBox {
   border-top: solid 3px orange;
   padding: 20px;
-  width: 800px;
+  width: 450px;
   background-color: whitesmoke;
 }
 
@@ -93,6 +104,7 @@ label {
           transition: all 0.4s ease-in-out;
   margin-top: 20px;
   display: none;
+  width: 723px;
 }
 
 .data-list th {
