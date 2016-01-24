@@ -60,6 +60,7 @@ label {
 .PFChartBox {
   border-top: solid 3px orange;
   padding: 20px;
+  width: 800px;
   background-color: whitesmoke;
 }
 

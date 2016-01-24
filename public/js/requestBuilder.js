@@ -40,11 +40,11 @@ function updateResult(data, textStatus, jqXHR) {
              data.ranges[4].min + " - " + data.ranges[4].max + " $"],
     datasets: [
       {
-        label: "My First dataset",
-        fillColor: "rgba(220,220,220,0.5)",
-        strokeColor: "rgba(255,255,255,0.8)",
-        highlightFill: "rgba(220,220,220,0.75)",
-        highlightStroke: "rgba(255,255,255,1)",
+        label: "Number of items per price range",
+        fillColor: "rgba(120,120,120,0.5)",
+        strokeColor: "rgba(160,160,160,0.8)",
+        highlightFill: "rgba(26, 188, 156, 0.3)",
+        highlightStroke: "rgba(210,210,210, 0.6)",
         data: [data.ranges[0].ads.length,
                data.ranges[1].ads.length,
                data.ranges[2].ads.length,
@@ -56,7 +56,7 @@ function updateResult(data, textStatus, jqXHR) {
 
   var ctx = $("#myChart").get(0).getContext("2d");
   var myBarChart = new Chart(ctx).Bar(data, {
-      responsive: true, scaleFontColor: "#FFFFFF" });
+      responsive: true, scaleFontColor: "#0c0c0c" });
 
   $('.data-list').css('display', 'block');
   hideLoader();
