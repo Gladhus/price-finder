@@ -64,10 +64,10 @@ function updateResult(data, textStatus, jqXHR) {
 
   $('.PFStats').css('display', 'inline-block');
 
-  $(".js-hi-price").html("Highest price : " + data.max + " $");
-  $(".js-low-price").html("Lower price : " + data.min + " $");
-  $(".js-av-price").html("Average price : " + data.mean + " $");
-  $(".js-median").html("Median : " + data.median + " $");
+  $(".js-hi-price").html("Highest price : " + data.max.toFixed(2) + " $");
+  $(".js-low-price").html("Lower price : " + data.min.toFixed(2) + " $");
+  $(".js-av-price").html("Average price : " + data.mean.toFixed(2) + " $");
+  $(".js-median").html("Median : " + data.median.toFixed(2) + " $");
   $(".js-stand-dev").html("Std. deviation : " + data.std.toFixed(2) + " $");
 
   $('.data-list').css('display', 'block');
