@@ -31,10 +31,12 @@ function movePFBlockAside() {
   $('.js-chart-container').addClass('PFChartBox');
   $('#myChart').css('display', 'block');
   $('.data-list').css('display', 'block');
-
-  $('.PFChartBox').css('.opacity', '1');
+  $('.js-stats').css('display', 'block');
+  
+  $('.js-chart-box').css('.opacity', '1');
   $('#myChart').css('opacity', '1');
   $('.data-list').css('opacity', '1');
+  $('.js-stats').css('opacity', '1');
 
   var button = $('<span class="hideBtn btn btn-primary fui-triangle-right-large"></span>');
   button.css('position', 'absolute');
@@ -47,15 +49,18 @@ function movePFBlockAside() {
 }
 
 function movePFBlockCenter() {
-  $('.js-chart-box').removeClass('PFChartBox');
-  $('.js-chart-box').css('opacity', '0');
+  $('.js-chart-container').removeClass('PFChartBox');
+  $('.js-chart-container').css('opacity', '0');
+  $('.js-stats').css('opacity', '0');
   $('.PFMain').css('left', '400px');
   $('#myChart').css('opacity', '0');
   $('.data-list').css('opacity', '0');
   setTimeout(function() { 
     $('#myChart').css('display', 'none');
     $('.data-list').css('display', 'none');
+    $('.js-chart-box').css('display', 'none');
     $('.PFMain').css('position', 'static');  
+    $('.js-stats').css('display', 'none');
   }, 400);
   $('.hideBtn').remove();
 }

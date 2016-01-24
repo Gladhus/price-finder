@@ -66,13 +66,23 @@ label {
   margin-right: -20px;
 }
 
+#myChart {
+
+}
+
 .PFSelect {
   border: solid 1px orange;
+}
+
+.PFStats {
+  width: 300px; 
+  display: none;
 }
 
 .PFChartBox {
   border-top: solid 3px orange;
   padding: 20px;
+  width: 800px;
   background-color: whitesmoke;
 }
 
