@@ -64,11 +64,10 @@ label {
 }
 
 .data-list td:nth-child(2) {
-  width: 140px !important;
 }
 
 .data-list td:nth-child(3) {
-  
+ width: 140px !important; 
 }
 .data-list td {
   overflow: hidden;
