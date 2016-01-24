@@ -76,7 +76,7 @@ label {
 
 .PFStats {
   width: 300px; 
-  display: inline-block;
+  display: none;
 }
 
 .PFChartBox {
