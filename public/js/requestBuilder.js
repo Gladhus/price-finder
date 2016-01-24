@@ -28,7 +28,7 @@ function buildClarifaiData() {
 }
 
 function updateResult(data, textStatus, jqXHR) {
-	var myChart = $("myChart"); 
+	var myChart = $("#myChart"); 
   myChart.css("display","block");
   var ctx = myChart.get(0).getContext("2d");
 
