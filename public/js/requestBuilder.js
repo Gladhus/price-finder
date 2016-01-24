@@ -29,15 +29,17 @@ function buildClarifaiData() {
 
 function updateResult(data, textStatus, jqXHR) {
   var myChart = $("#myChart");
+  var table = $('.table');
   myChart.css("display","block");
+  $('.data-list').css('display', 'block');
   var ctx = myChart.get(0).getContext("2d");
 
-  var data = {
-    labels: [data.ranges[0].min + " - " + data.ranges[0].max + " $",
-             data.ranges[1].min + " - " + data.ranges[1].max + " $",
-             data.ranges[2].min + " - " + data.ranges[2].max + " $",
-             data.ranges[3].min + " - " + data.ranges[3].max + " $",
-             data.ranges[4].min + " - " + data.ranges[4].max + " $"],
+  var graphData = {
+    labels: [data.ranges[0].min.toFixed(2) + " - " + data.ranges[0].max.toFixed(2) + " $",
+             data.ranges[1].min.toFixed(2) + " - " + data.ranges[1].max.toFixed(2) + " $",
+             data.ranges[2].min.toFixed(2) + " - " + data.ranges[2].max.toFixed(2) + " $",
+             data.ranges[3].min.toFixed(2) + " - " + data.ranges[3].max.toFixed(2) + " $",
+             data.ranges[4].min.toFixed(2) + " - " + data.ranges[4].max.toFixed(2) + " $"],
     datasets: [
       {
         label: "My First dataset",
@@ -55,10 +57,16 @@ function updateResult(data, textStatus, jqXHR) {
   };
 
   var ctx = $("#myChart").get(0).getContext("2d");
-  var myBarChart = new Chart(ctx).Bar(data, {
-      responsive: true, scaleFontColor: "#FFFFFF" });
+  var myBarChart = new Chart(ctx).Bar(graphData, {responsive: true, scaleFontColor: "#FFFFFF"});
+ 
+  var rank = 1;
 
-  $('.data-list').css('display', 'block');
+  for(var j = 0; j < 5; ++j){
+    for(var i = 0; i < data.ranges[j].ads.length; ++i){
+      table.append($('<tr><td>' + rank + '</td><td><a href="' + data.ranges[j].ads[i].link + '">' + data.ranges[j].ads[i].title + '</a></td> <td>' + data.ranges[j].ads[i].price + ' $</td></tr>'));
+      ++rank;
+    }
+  }
   hideLoader();
   movePFBlockAside();
 }
