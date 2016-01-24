@@ -8,7 +8,7 @@ function normalize(data) {
     link : data.viewItemURL[0],
     title : data.title[0],
     pubDate : null,
-    image : data.galleryURL[0],
+    image : (data.galleryURL==null?null:data.galleryURL[0]),
     description : null,
     price : parseFloat(data.sellingStatus[0].convertedCurrentPrice[0].__value__) // The price has to be a float
   }
