@@ -8,10 +8,16 @@ body {
           transition: all 2.4s ease-in-out;
 
 }
+
 .content { margin: auto; width: 450px; }
-h1, h2, h3, h4, h5, h6 { color: #7F8C8D !important; }
+h2, h3, h4, h6 { color: #7F8C8D !important; }
 p { color: #95A5A6; }
 /*a { color: #00B7FF; }*/
+
+h1 { color: #1abc9c !important;}
+h5 { color: rgb(52, 73, 94) !important;
+    font-size: 27px !important;
+    padding-bottom: 10px;}
 
 input:focus,
 select:focus,
@@ -25,8 +31,8 @@ span {
     outline: none;
 }
 
-label { 
-  display: inline-block; 
+label {
+  display: inline-block;
   margin-right: 20px;
 }
 
@@ -39,10 +45,17 @@ label {
 }
 
 .PFBox {
-  border-top: solid 3px orange;
+  border-top: solid 4px #1abc9c;
   padding: 20px;
+  padding-top:5px;
   background-color: whitesmoke;
   width: 450px; height: 450px;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 
 .PFInput {
@@ -78,7 +91,7 @@ label {
      -moz-transition: all 0.4s ease-in-out;
        -o-transition: all 0.4s ease-in-out;
           transition: all 0.4s ease-in-out;
-  margin-top: 20px; 
+  margin-top: 20px;
   display: none;
 }
 
@@ -103,9 +116,9 @@ label {
 
 .dark {
   background:
-    /* top, transparent black, faked with gradient */ 
+    /* top, transparent black, faked with gradient */
     linear-gradient(
-      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7),
       rgba(0, 0, 0, 0.7)
     ),
     /* bottom, image */
@@ -113,12 +126,12 @@ label {
 
 @import url(http://fonts.googleapis.com/css?family=Lato);
 
-.loader-wrap { 
-  width 450px; height: 200px; 
-  position: absolute; 
-  top: 45%; left: calc(50% - 100px); 
-  background-color: rgba(0, 0, 0, 0.6); 
-  padding: 10px; 
+.loader-wrap {
+  width 450px; height: 200px;
+  position: absolute;
+  top: 45%; left: calc(50% - 100px);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
   border-radius: 5px;
 }
 
