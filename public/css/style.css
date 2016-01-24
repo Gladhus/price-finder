@@ -53,8 +53,17 @@ label {
   margin-right: -20px;
 }
 
+#myChart {
+
+}
+
 .PFSelect {
   border: solid 1px orange;
+}
+
+.PFStats {
+  width: 300px; 
+  display: inline-block;
 }
 
 .PFChartBox {

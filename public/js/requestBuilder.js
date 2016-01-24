@@ -57,7 +57,7 @@ function updateResult(data, textStatus, jqXHR) {
   };
 
   var ctx = $("#myChart").get(0).getContext("2d");
-  var myBarChart = new Chart(ctx).Bar(data, {
+  var myBarChart = new Chart(ctx).Bar(graphData, {
       responsive: true, scaleFontColor: "#0c0c0c" });
 
   $('.data-list').css('display', 'block');
