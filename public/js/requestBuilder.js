@@ -29,7 +29,9 @@ function buildClarifaiData() {
 
 function updateResult(data, textStatus, jqXHR) {
   var myChart = $("#myChart");
-  var table = $('.table');
+  var table = $('.table>tbody');
+  table.empty();
+
   myChart.css("display","block");
   $('.data-list').css('display', 'block');
   var ctx = myChart.get(0).getContext("2d");
@@ -58,7 +60,7 @@ function updateResult(data, textStatus, jqXHR) {
 
   var ctx = $("#myChart").get(0).getContext("2d");
   var myBarChart = new Chart(ctx).Bar(graphData, {responsive: true, scaleFontColor: "#FFFFFF"});
- 
+
   var rank = 1;
 
   for(var j = 0; j < 5; ++j){
@@ -115,7 +117,7 @@ function buildRequest() {
   sendRequest(getTagsInputValues(".js-tags"), getTagsInputValues(".js-keywords"), getCategories(), getTargets());
 }
 
-function sendRequest(tagNames, keywords, categories, targets) { 
+function sendRequest(tagNames, keywords, categories, targets) {
   $.ajax({
     type: "POST",
     url: urlLocal,
