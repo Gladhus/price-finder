@@ -39,10 +39,10 @@ label {
 }
 
 .PFBox {
-  border-top: solid 2px orange;
+  border-top: solid 3px orange;
   padding: 20px;
   background-color: whitesmoke;
-  width: 450px; height: 400px;
+  width: 450px; height: 450px;
 }
 
 .PFInput {
