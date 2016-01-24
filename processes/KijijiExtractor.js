@@ -47,7 +47,17 @@ function extract(request) {
 
   var deferred = Q.defer();
 
-  kijiji.query({'locationId':request.region}, {'minPrice':0, 'keywords':keywordsBuilder(request, 'french')}, function(err, ads) {
+  var categoriesId = {
+    'Cars': 'k0c174',
+    'Laptops': 'c773'
+  }
+
+  var category = categoriesId[request.languages['french'].categories];
+
+  kijiji.query({
+    'locationId': request.region,
+    'categoryId': category ? category : '',
+  }, {'minPrice':200, 'keywords':keywordsBuilder(request, 'french')}, function(err, ads) {
 
     var cleanedData = [];
 
