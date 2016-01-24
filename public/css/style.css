@@ -30,6 +30,14 @@ label {
   margin-right: 20px;
 }
 
+.PFMain {
+  left: 300px;
+  -webkit-transition: left 0.5s ease-in-out;
+     -moz-transition: left 0.5s ease-in-out;
+       -o-transition: left 0.5s ease-in-out;
+          transition: left 0.5s ease-in-out;
+}
+
 .PFBox {
   border-top: solid 3px orange;
   padding: 20px;
@@ -50,6 +58,10 @@ label {
 }
 
 .data-list {
+  -webkit-transition: all 0.4s ease-in-out;
+     -moz-transition: all 0.4s ease-in-out;
+       -o-transition: all 0.4s ease-in-out;
+          transition: all 0.4s ease-in-out;
   margin-top: 20px; 
   display: none;
 }
