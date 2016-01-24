@@ -12,7 +12,7 @@ function showLoader() {
   $('.loader-wrap').css('opacity', '1');
   $('.loader-wrap').css('display','block'); 
   $('body').addClass('dark');
-  $('.PFBox').css('opacity', '0.3');
+  $('.PFMain').css('opacity', '0.3');
 }
 
 function hideLoader() {
@@ -20,17 +20,22 @@ function hideLoader() {
     $('.loader-wrap').css('display', 'none');
   }, 900);
   $('body').removeClass('dark');
-  $('.PFBox').css('opacity', '1.0');
+  $('.PFMain').css('opacity', '1.0');
   $('.loader-wrap').css('opacity', '0');
 }
 
 function movePFBlockAside() {
   $('.PFMain').css('position', 'absolute');
   $('.PFMain').css('left', '-400px');
+
+  $('.js-chart-container').addClass('PFChartBox');
   $('#myChart').css('display', 'block');
   $('.data-list').css('display', 'block');
+
+  $('.PFChartBox').css('.opacity', '1');
   $('#myChart').css('opacity', '1');
   $('.data-list').css('opacity', '1');
+
   var button = $('<span class="hideBtn btn btn-primary fui-triangle-right-large"></span>');
   button.css('position', 'absolute');
   button.css('left', '20px');
@@ -42,6 +47,8 @@ function movePFBlockAside() {
 }
 
 function movePFBlockCenter() {
+  $('.js-chart-box').removeClass('PFChartBox');
+  $('.js-chart-box').css('opacity', '0');
   $('.PFMain').css('left', '400px');
   $('#myChart').css('opacity', '0');
   $('.data-list').css('opacity', '0');
