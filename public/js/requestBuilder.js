@@ -66,7 +66,7 @@ function updateResult(data, textStatus, jqXHR) {
 
   for(var j = 0; j < 5; ++j){
     for(var i = 0; i < data.ranges[j].ads.length; ++i){
-      table.append($('<tr><td>' + rank + '</td><td><a href="' + data.ranges[j].ads[i].link + '">' + data.ranges[j].ads[i].title + '</a></td> <td>' + data.ranges[j].ads[i].price + ' $</td></tr>'));
+      table.append($('<tr><td>' + rank + '</td><td><a href="' + data.ranges[j].ads[i].link + '">' + data.ranges[j].ads[i].title + '</a></td> <td>' + data.ranges[j].ads[i].price.toFixed(2) + ' $</td></tr>'));
       ++rank;
     }
   }
