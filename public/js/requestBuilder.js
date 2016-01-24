@@ -28,7 +28,7 @@ function buildClarifaiData() {
 }
 
 function updateResult(data, textStatus, jqXHR) {
-	var myChart = $("#myChart"); 
+  var myChart = $("#myChart"); 
   myChart.css("display","block");
   var ctx = myChart.get(0).getContext("2d");
   
@@ -54,10 +54,11 @@ function updateResult(data, textStatus, jqXHR) {
     ]
   };
 
-var ctx = $("#myChart").get(0).getContext("2d");
-var myBarChart = new Chart(ctx).Bar(data, {
+  var ctx = $("#myChart").get(0).getContext("2d");
+  var myBarChart = new Chart(ctx).Bar(data, {
       responsive: true, scaleFontColor: "#FFFFFF" });
   
+  $('.data-list').css('display', 'block');
   hideLoader();
 }
 

@@ -21,4 +21,4 @@ function hideLoader() {
 }
 
 hideLoader();
-
+$('.loader-wrap').css('display', 'none');
