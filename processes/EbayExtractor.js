@@ -34,7 +34,7 @@ function extract(data) {
     + "&RESPONSE-DATA-FORMAT=JSON"
     + "&callback=_cb_findItemsByKeywords"
     + "&REST-PAYLOAD"
-    + "&keywords=" + keywordsBuilder(request, 'english')
+    + "&keywords=" + keywordsBuilder(data, 'english')
     + "&paginationInput.entriesPerPage=100";
 
   request.get(url, function(error, response, body) {

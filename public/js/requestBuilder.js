@@ -1,6 +1,6 @@
 /*Dropzone.autoDiscover = false;
 
-$("#search #dropzone").dropzone({ 
+$("#search #dropzone").dropzone({
 																	url: urlLocal.toString(),
 																	clickable: true,
 																	uploadMultiple: false
@@ -28,15 +28,15 @@ function buildClarifaiData() {
 }
 
 function updateResult(data, textStatus, jqXHR) {
-  var myChart = $("#myChart"); 
+  var myChart = $("#myChart");
   myChart.css("display","block");
   var ctx = myChart.get(0).getContext("2d");
-  
+
   var data = {
-    labels: [data.ranges[0].min + " - " + data.ranges[0].max + " $", 
-             data.ranges[1].min + " - " + data.ranges[1].max + " $", 
-             data.ranges[2].min + " - " + data.ranges[2].max + " $", 
-             data.ranges[3].min + " - " + data.ranges[3].max + " $", 
+    labels: [data.ranges[0].min + " - " + data.ranges[0].max + " $",
+             data.ranges[1].min + " - " + data.ranges[1].max + " $",
+             data.ranges[2].min + " - " + data.ranges[2].max + " $",
+             data.ranges[3].min + " - " + data.ranges[3].max + " $",
              data.ranges[4].min + " - " + data.ranges[4].max + " $"],
     datasets: [
       {
@@ -45,10 +45,10 @@ function updateResult(data, textStatus, jqXHR) {
         strokeColor: "rgba(255,255,255,0.8)",
         highlightFill: "rgba(220,220,220,0.75)",
         highlightStroke: "rgba(255,255,255,1)",
-        data: [data.ranges[0].ads.length, 
-               data.ranges[1].ads.length, 
-               data.ranges[2].ads.length, 
-               data.ranges[3].ads.length, 
+        data: [data.ranges[0].ads.length,
+               data.ranges[1].ads.length,
+               data.ranges[2].ads.length,
+               data.ranges[3].ads.length,
                data.ranges[4].ads.length]
       }
     ]
@@ -57,7 +57,7 @@ function updateResult(data, textStatus, jqXHR) {
   var ctx = $("#myChart").get(0).getContext("2d");
   var myBarChart = new Chart(ctx).Bar(data, {
       responsive: true, scaleFontColor: "#FFFFFF" });
-  
+
   $('.data-list').css('display', 'block');
   hideLoader();
 }
@@ -67,9 +67,9 @@ function sendClarifaiRequest(img) {
     type: "POST",
     url: urlClarifai,
     headers: { "grant_type" : clarifaiCredentials.grant_type.toString() },
-    data: { 
+    data: {
       "client_id" : clarifaiCredentials.client_id.toString(),
-      "client_secret" : clarifaiCredentials.client_secret.toString() 
+      "client_secret" : clarifaiCredentials.client_secret.toString()
     },
     success: updateResult,
     dataType: "json"
@@ -101,23 +101,23 @@ function buildRequest() {
   sendRequest(getTagsInputValues(".js-tags"), getTagsInputValues(".js-keywords"), getCategories());
 }
 
-function sendRequest(tagNames, keywords, categories) { 
+function sendRequest(tagNames, keywords, categories) {
   $.ajax({
     type: "POST",
     url: urlLocal,
-    data: { 
+    data: {
       "region" : 80002,
-      "targets" : [ "kijiji" ],
+      "targets" : [ "kijiji", "ebay" ],
       "languages" : {
 	"french" : {
-	  "tags" : tagNames, 
-	  "keywords" : keywords, 
-	  "categories" : categories 
+	  "tags" : tagNames,
+	  "keywords" : keywords,
+	  "categories" : categories
 	},
 	"english" : {
-	  "tags" : tagNames, 
-	  "keywords" : keywords, 
-	  "categories" : categories 
+	  "tags" : tagNames,
+	  "keywords" : keywords,
+	  "categories" : categories
 	}
       }
     },
@@ -125,4 +125,3 @@ function sendRequest(tagNames, keywords, categories) {
     dataType: "json"
   });
 }
-
