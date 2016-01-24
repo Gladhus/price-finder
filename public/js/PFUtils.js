@@ -12,7 +12,6 @@ function showLoader() {
   $('body').addClass('dark');
   $('.PFBox').css('opacity', '0.3');
   $('.loader-wrap').css('opacity', '1');
-  //$('.loader-wrap').css('display', 'block');
 }
 
 function hideLoader() {
