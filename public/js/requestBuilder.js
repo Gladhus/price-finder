@@ -28,7 +28,7 @@ function buildClarifaiData() {
 }
 
 function updateResult(data, textStatus, jqXHR) {
-	a = data;
+	console.log('Allo');
 }
 
 function sendClarifaiRequest(img) {
@@ -64,12 +64,27 @@ function buildRequest() {
 }
 
 function sendRequest(tagNames, keywords, categories) {
+
+
 	$.ajax({
 	  type: "POST",
 	  url: urlLocal,
-	  data: { "tagNames" :  tagNames,
-	  				"keywords" : keywords,
-	  				"categories" : categories },
+	  data: { 
+	  	"region" : 80002,
+	  	"targets" : [ "kijiji" ],
+	  	"languages" : {
+	  		"french" : {
+				  "tags" : tagNames, 
+					"keywords" : keywords, 
+					"categories" : categories 
+				},
+				"english" : {
+				  "tags" : tagNames, 
+					"keywords" : keywords, 
+					"categories" : categories 
+				}
+			}
+		},
 	  success: updateResult,
 	  dataType: "json"
 	});
