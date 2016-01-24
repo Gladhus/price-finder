@@ -28,7 +28,7 @@ function buildClarifaiData() {
 }
 
 function updateResult(data, textStatus, jqXHR) {
-  console.log('Allo');
+  hideLoader();
 }
 
 function sendClarifaiRequest(img) {
@@ -61,11 +61,16 @@ function getCategories() {
   return categories;
 }
 
+function getTargets() {
+
+}
+
 function buildRequest() {
+  showLoader();
   sendRequest(getTagsInputValues(".js-tags"), getTagsInputValues(".js-keywords"), getCategories());
 }
 
-function sendRequest(tagNames, keywords, categories) {
+function sendRequest(tagNames, keywords, categories) { 
   $.ajax({
     type: "POST",
     url: urlLocal,
