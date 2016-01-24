@@ -31,8 +31,6 @@ function updateResult(data, textStatus, jqXHR) {
 	var myChart = $("#myChart"); 
   myChart.css("display","block");
   var ctx = myChart.get(0).getContext("2d");
-
-  console.log(data);
   
   var data = {
     labels: [data.ranges[0].min + " - " + data.ranges[0].max, 
@@ -60,7 +58,7 @@ var ctx = $("#myChart").get(0).getContext("2d");
 var myBarChart = new Chart(ctx).Bar(data, {
       responsive: true, scaleFontColor: "#FFFFFF" });
   
-
+  hideLoader();
 }
 
 function sendClarifaiRequest(img) {
@@ -93,11 +91,16 @@ function getCategories() {
   return categories;
 }
 
+function getTargets() {
+
+}
+
 function buildRequest() {
+  showLoader();
   sendRequest(getTagsInputValues(".js-tags"), getTagsInputValues(".js-keywords"), getCategories());
 }
 
-function sendRequest(tagNames, keywords, categories) {
+function sendRequest(tagNames, keywords, categories) { 
   $.ajax({
     type: "POST",
     url: urlLocal,
