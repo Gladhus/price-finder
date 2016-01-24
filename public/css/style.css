@@ -11,7 +11,7 @@ body {
 .content { margin: auto; width: 450px; }
 h1, h2, h3, h4, h5, h6 { color: #7F8C8D !important; }
 p { color: #95A5A6; }
-a { color: #00B7FF; }
+/*a { color: #00B7FF; }*/
 
 input:focus,
 select:focus,
@@ -49,6 +49,29 @@ label {
   border: solid 1px orange;
 }
 
+.data-list {
+  margin-top: 20px; 
+}
+
+.data-list th {
+  background-color: rgb(26, 188, 156);
+  border: none;
+}
+
+.data-list td:nth-child(1) {
+  width: 80px !important;
+}
+
+.data-list td:nth-child(2) {
+  width: 140px !important;
+}
+
+.data-list td:nth-child(3) {
+  
+}
+.data-list td {
+  overflow: hidden;
+}
 
 .dark {
   background:
@@ -61,33 +84,6 @@ label {
 }
 
 @import url(http://fonts.googleapis.com/css?family=Lato);
-a {
-  position: fixed;
-  bottom: 2%;
-  display: block;
-  text-align: center;
-  color: #0fa;
-  font-family: "Lato", sans-serif;
-  text-decoration: none !important;
-  width: 100%;
-}
-
-/*
-body, html {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-*/
-/*
-  body {
-  background: -webkit-linear-gradient(0deg, #00b377, #00d68f);
-  background: linear-gradient(90deg, #00b377, #00d68f);
-  box-shadow: inset 0px 0px 90px rgba(0, 0, 0, 0.5);
-  margin: 0px;
-  padding: 0px;
-}
-*/
 
 .loader-wrap { 
   width 450px; height: 200px; 
