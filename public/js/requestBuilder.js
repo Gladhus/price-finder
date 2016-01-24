@@ -33,11 +33,11 @@ function updateResult(data, textStatus, jqXHR) {
   var ctx = myChart.get(0).getContext("2d");
   
   var data = {
-    labels: [data.ranges[0].min + " - " + data.ranges[0].max, 
-             data.ranges[1].min + " - " + data.ranges[1].max, 
-             data.ranges[2].min + " - " + data.ranges[2].max, 
-             data.ranges[3].min + " - " + data.ranges[3].max, 
-             data.ranges[4].min + " - " + data.ranges[4].max],
+    labels: [data.ranges[0].min + " - " + data.ranges[0].max + " $", 
+             data.ranges[1].min + " - " + data.ranges[1].max + " $", 
+             data.ranges[2].min + " - " + data.ranges[2].max + " $", 
+             data.ranges[3].min + " - " + data.ranges[3].max + " $", 
+             data.ranges[4].min + " - " + data.ranges[4].max + " $"],
     datasets: [
       {
         label: "My First dataset",
