@@ -68,6 +68,7 @@ function updateResult(data, textStatus, jqXHR) {
     }
   }
   hideLoader();
+  movePFBlockAside();
 }
 
 function sendClarifaiRequest(img) {
