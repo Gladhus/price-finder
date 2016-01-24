@@ -93,18 +93,19 @@ label {
 .PFStats {
   border-top: solid 3px orange;
   padding: 20px;
-  width: 250px;
+  width: 266px;
   background-color: whitesmoke;
   right: 240px;
-  top: 442px;
+  top: 397px;
   position: absolute;
   display: none;
 }
 
 .PFChartBox {
+  display: inline-block;
   border-top: solid 3px orange;
-  padding: 20px;
-  width: 450px;
+  padding: 20px 0px 5px 5px;
+  width: 435px;
   background-color: whitesmoke;
 }
 
