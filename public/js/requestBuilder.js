@@ -93,21 +93,26 @@ function getCategories() {
 }
 
 function getTargets() {
+  targets = [ ];
+  $(".js-target").find(".select2-choices").find(".select2-search-choice").each(function(categoryIndex) {
+    targets.push($(this).find('div').html().toLowerCase());
+  });
 
+  return targets;
 }
 
 function buildRequest() {
   showLoader();
-  sendRequest(getTagsInputValues(".js-tags"), getTagsInputValues(".js-keywords"), getCategories());
+  sendRequest(getTagsInputValues(".js-tags"), getTagsInputValues(".js-keywords"), getCategories(), getTargets());
 }
 
-function sendRequest(tagNames, keywords, categories) {
+function sendRequest(tagNames, keywords, categories, targets) { 
   $.ajax({
     type: "POST",
     url: urlLocal,
     data: {
       "region" : 80002,
-      "targets" : [ "kijiji", "ebay" ],
+      "targets" : targets,
       "languages" : {
 	"french" : {
 	  "tags" : tagNames,
